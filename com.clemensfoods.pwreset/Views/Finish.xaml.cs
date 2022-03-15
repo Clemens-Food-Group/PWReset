@@ -11,5 +11,12 @@ namespace com.clemensfoods.pwreset.Views
         {
             InitializeComponent();
         }
+
+        void Exit_Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+
+            Navigation.PopToRootAsync();
+
+        }
     }
 }

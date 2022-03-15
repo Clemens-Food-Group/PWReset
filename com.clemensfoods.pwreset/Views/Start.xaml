@@ -12,7 +12,8 @@
                 Placeholder="Scan Your Badge - Escanea tu credencial"
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center"
-                HorizontalTextAlignment="Center"/>
+                HorizontalTextAlignment="Center"
+                x:Name="TimeCard"/>
             <Button Text="Enter- Entrar" CornerRadius="15" Clicked="Enter_Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

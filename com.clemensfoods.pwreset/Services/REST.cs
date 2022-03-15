@@ -1,27 +1,28 @@
 ﻿using System;
 using com.clemensfoods.pwreset.Models;
 using Flurl.Http;
+using Xamarin.Forms;
 
 namespace com.clemensfoods.pwreset.Services
 {
     public class REST
     {
 
-        public AttendanceModel RestService()
+        public UKGModel RestService(Entry TimeCard )
         {
 
             // This line disables SSL verification
             //System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
 
-            using (var client = new FlurlClient("{BASE URL HERE}"))
+            using (var client = new FlurlClient("https://cfgazure.azurewebsites.net/"))
             {
                 try
                 {
                     System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
-                    var result = client.Request("{REQUEST HERE 'request/service' }")
+                    var result = client.Request("HRData/PasswordResetStoreTimecard")
+                        .SetQueryParam("TimeCardID", TimeCard.Text)
                         //.SetQueryParam()
-                        //.SetQueryParam()
-                        .GetJsonAsync<AttendanceModel>().Result;
+                        .GetJsonAsync<UKGModel>().Result;
 
 
 

@@ -5,8 +5,9 @@
     x:Class="com.clemensfoods.pwreset.Views.Finish">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-            <Label Text="You password will be reset to your 9 digit birthday. Reset will take 5 minutes."/>
-            <Label Text="Su contrase a se restablecer  a su cumplea os de 9 dígítos. El restablecimiento tardar  5 minutos."/>
+            <Label Text="You password will be reset to your 8 digit birthday MMDDYYYY. Reset will take 5 minutes."/>
+            <Label Text="Su contrase a se restablecer  a su cumplea os de 8 dígítos MMDDYYYY. El restablecimiento tardar  5 minutos."/>
+            <Button Text="Exit - Salida" CornerRadius="15" Clicked="Exit_Button_Clicked"/>
             </StackLayout>
     </ContentPage.Content>
 </ContentPage>

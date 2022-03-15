@@ -14,7 +14,7 @@ namespace com.clemensfoods.pwreset.Views
 
         void Enter_Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            var result = new Services.REST().RestService();
+            var result = new Services.REST().RestService(TimeCard);
 
             //if (result != null)
                 Navigation.PushAsync(new Finish());
