@@ -13,7 +13,10 @@
                 VerticalOptions="Center"
                 VerticalTextAlignment="Center"
                 HorizontalTextAlignment="Center"
-                x:Name="TimeCard"/>
+                IsPassword="True"
+                TextChanged="EntryTimeCard_TextChanged"
+                Text=""
+                x:Name="EntryTimeCard"/>
             <Button Text="Enter- Entrar" CornerRadius="15" Clicked="Enter_Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

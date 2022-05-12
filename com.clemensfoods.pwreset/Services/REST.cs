@@ -20,8 +20,7 @@ namespace com.clemensfoods.pwreset.Services
                 {
                     System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
                     var result = client.Request("HRData/PasswordResetStoreTimecard")
-                        .SetQueryParam("TimeCardID", TimeCard.Text)
-                        //.SetQueryParam()
+                        .SetQueryParam("TimeCardID", TimeCard.Text)                    
                         .GetJsonAsync<UKGModel>().Result;
 
 

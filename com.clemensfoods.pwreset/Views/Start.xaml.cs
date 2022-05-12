@@ -14,11 +14,38 @@ namespace com.clemensfoods.pwreset.Views
 
         void Enter_Button_Clicked(System.Object sender, System.EventArgs e)
         {
-            var result = new Services.REST().RestService(TimeCard);
+            ProcessEntry();
+        }
 
-            //if (result != null)
-                Navigation.PushAsync(new Finish());
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            EntryTimeCard.Text = "";
+            EntryTimeCard.Focus();
+        }
 
+        private void EntryTimeCard_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ProcessEntry();
+        }
+
+        private void ProcessEntry()
+        {
+            //DisplayAlert("Title", "Text Changed", "OK");
+            if (EntryTimeCard.Text.Length > 4 && EntryTimeCard.Text.Length < 6)
+            {
+                try
+                {
+                    var result = new Services.REST().RestService(EntryTimeCard);
+                    Navigation.PushAsync(new Finish());
+                }
+                catch(Exception ex)
+                {
+                    DisplayAlert("Could Not Record Badge!", "Please contact HR if you believe this is incorrect", "OK");
+                    EntryTimeCard.Text = "";
+                }
+
+            }
         }
     }
 }
