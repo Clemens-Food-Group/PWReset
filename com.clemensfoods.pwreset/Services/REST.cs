@@ -8,19 +8,19 @@ namespace com.clemensfoods.pwreset.Services
     public class REST
     {
 
-        public UKGModel RestService(Entry TimeCard )
+        public UKGModel RestService(Entry TimeCard)
         {
 
             // This line disables SSL verification
             //System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
 
-            using (var client = new FlurlClient("https://cfgazure.azurewebsites.net/"))
+            using (var client = new FlurlClient("http://cfcweb3/SupplyChainAPI/"))
             {
                 try
                 {
                     System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
                     var result = client.Request("HRData/PasswordResetStoreTimecard")
-                        .SetQueryParam("TimeCardID", TimeCard.Text)                    
+                        .SetQueryParam("TimeCardID", TimeCard.Text)
                         .GetJsonAsync<UKGModel>().Result;
 
 
