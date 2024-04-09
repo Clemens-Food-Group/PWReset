@@ -187,4 +187,13 @@
   <ItemGroup>
     <Folder Include="Assets.xcassets\LaunchIcon.imageset\" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CFG Logo - Transparent - 2020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Untitled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PasswordResetLogo.png" />
+  </ItemGroup>
 </Project>
