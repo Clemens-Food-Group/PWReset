@@ -8,9 +8,8 @@ namespace com.clemensfoods.pwreset.Services
     public class REST
     {
 
-        public UKGModel RestService(Entry TimeCard )
+        public UKGModel RestService(Entry TimeCard)
         {
-
             // This line disables SSL verification
             //System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicy) => { return true; };
 
@@ -23,17 +22,11 @@ namespace com.clemensfoods.pwreset.Services
                         .SetQueryParam("TimeCardID", TimeCard.Text)                    
                         .GetJsonAsync<UKGModel>().Result;
 
-
-
-
-
                     return result;
-
                 }
                 catch (FlurlHttpException fe)
                 {
                     var error = fe;
-
 
                     //var properties = new Dictionary<string, string>
                     //{
@@ -47,6 +40,7 @@ namespace com.clemensfoods.pwreset.Services
                 catch (Exception e)
                 {
                     var v = e;
+
                     //var properties = new Dictionary<string, string>
                     //{
                     //    { "Services.RegisterPushNotificatons", "RegisterPushTokenRequest" },
@@ -54,9 +48,8 @@ namespace com.clemensfoods.pwreset.Services
                     //};
                     //Crashes.TrackError(e, properties);
 
-                    ///
                     /// send a TOAST message here
-                    /// 
+
                     return null;
                 }
             }
